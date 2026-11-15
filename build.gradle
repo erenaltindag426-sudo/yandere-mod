@@ -6,6 +6,18 @@ version = project.mod_version
 group = project.maven_group
 base { archivesName = project.archives_base_name }
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['.']
+            include '*.java'
+        }
+        resources {
+            srcDirs = []
+        }
+    }
+}
+
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
@@ -15,7 +27,8 @@ dependencies {
 
 processResources {
     inputs.property "version", project.version
-    filesMatching("fabric.mod.json") { expand "version": project.version }
+    from('fabric.mod.json') { expand "version": project.version }
+    from('yuki.png') { into 'assets/yandere/textures/entity' }
 }
 
 tasks.withType(JavaCompile).configureEach { it.options.release = 21 }
