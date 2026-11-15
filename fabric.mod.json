@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "yandere",
+  "version": "${version}",
+  "name": "Yandere Yuki",
+  "description": "Seni takip eden, köylüleri kıskanan yapay zekalı yandere korku modu.",
+  "authors": ["sen"],
+  "environment": "*",
+  "entrypoints": {
+    "main": ["yandere.YandereMod"],
+    "client": ["yandere.YandereClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
